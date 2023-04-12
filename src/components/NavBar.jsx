@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./SideBar.css";
+import "./NavBar.css";
 
 const SideBar = () => {
   return (
@@ -8,10 +8,12 @@ const SideBar = () => {
       <div className="SideBar">
         <nav className="Menu">
           <Link to="/">
-            <div className="name">LanguageChat</div>
+            <span className="name">LanguageChat</span>
           </Link>
+          <div>
           <Link to="/">Feed</Link>
           <Link to="/">Create Post</Link>
+          </div>
         </nav>
       </div>
       <div className="routes">
