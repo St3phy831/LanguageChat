@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SideBar from "./components/SideBar";
+import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<SideBar />}></Route>
+        <Route path="/" element={<SideBar />}>
+          <Route index element={<Home />} />
+        </Route>
       </Routes>
     </div>
   );
