@@ -11,7 +11,7 @@ const SideBar = () => {
             <span className="name">LanguageChat</span>
           </Link>
           <div>
-            <Link to="/">Feed</Link>
+            <Link to="/feed">Feed</Link>
             <Link to="/create">Create Post</Link>
           </div>
         </nav>

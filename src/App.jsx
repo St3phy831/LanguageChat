@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
+import Feed from "./pages/Feed";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
           <Route path="/create" element={<CreatePost />} />
+          <Route path="/feed" element={<Feed />} />
         </Route>
       </Routes>
     </div>

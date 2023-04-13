@@ -1,0 +1,18 @@
+.Feed {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px;
+}
+
+.Post {
+  background-color: rgb(172, 232, 177);
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 18px;
+}
