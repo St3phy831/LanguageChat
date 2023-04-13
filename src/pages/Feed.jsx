@@ -1,5 +1,6 @@
 import { supabase } from "../client";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Feed.css";
 
 const Feed = () => {
@@ -19,11 +20,13 @@ const Feed = () => {
       <h1>Feed</h1>
       {posts &&
         posts.map((post) => (
-          <div className="Post">
-            <b className="title">{post.title}</b>
-            <br></br>
-            <p>Upvotes: {post.upvotes}</p>
-          </div>
+          <Link to={"/" + post.id}>
+            <div className="Post">
+              <b className="title">{post.title}</b>
+              <br></br>
+              <p>Upvotes: {post.upvotes}</p>
+            </div>
+          </Link>
         ))}
     </div>
   );

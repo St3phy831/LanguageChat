@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Feed from "./pages/Feed";
+import DetailView from "./pages/DetailView";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/create" element={<CreatePost />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/:id" element={<DetailView />} />
         </Route>
       </Routes>
     </div>
