@@ -1,6 +1,6 @@
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
   return (
     <form className="Form">
       <div className="inputTypes">
@@ -11,6 +11,7 @@ const Form = () => {
           name="title"
           placeholder="Enter Title"
           size="50"
+          onChange={props.handleChange}
         />
       </div>
       <div className="inputTypes">
@@ -22,16 +23,28 @@ const Form = () => {
           name="description"
           placeholder="Enter Description"
           rows="10"
-          cols="70"
+          cols="50"
+          onChange={props.handleChange}
         ></textarea>
       </div>
-      <div>
-        <b className="formTitle">Languages: </b>
-        <select id="formDropdown">
+      <div className="inputTypes">
+        <b className="formTitle">Language: </b>
+        <select id="formDropdown" name="language" onChange={props.handleChange}>
           {Object.values(languages).map((language) => (
             <option value={language}>{language}</option>
           ))}
         </select>
+      </div>
+      <div className="inputTypes">
+        <b className="formTitle">Image: </b>
+        <input
+          type="text"
+          id="image"
+          name="image"
+          placeholder="Enter Image URL"
+          size="30"
+          onChange={props.handleChange}
+        />
       </div>
     </form>
   );
