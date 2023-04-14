@@ -1,0 +1,9 @@
+.Filters {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.filtersBtn {
+  margin: 0px 5px;
+}

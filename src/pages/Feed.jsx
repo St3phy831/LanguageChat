@@ -1,14 +1,22 @@
 import { supabase } from "../client";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Filters from "../components/Filters";
 import "./Feed.css";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
 
+  const updatePosts = (sortedPosts) => {
+    setPosts(sortedPosts);
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await supabase.from("Post").select().order("created_at");
+      const { data } = await supabase
+        .from("Post")
+        .select()
+        .order("created_at", { ascending: false });
 
       setPosts(data);
     };
@@ -17,7 +25,10 @@ const Feed = () => {
 
   return (
     <div className="Feed">
-      <h1>Feed</h1>
+      <div id="feedTitle">
+        <h1>Feed</h1>
+      </div>
+      {posts && <Filters posts={posts} setPosts={updatePosts} />}
       {posts &&
         posts.map((post) => (
           <Link to={"/" + post.id}>
