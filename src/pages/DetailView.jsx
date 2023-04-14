@@ -17,6 +17,23 @@ const DetailView = () => {
     fetchPost().catch(console.error);
   }, []);
 
+  const updateUpvotes = async (event) => {
+    event.preventDefault();
+    const newCount = post.upvotes + 1;
+    if (post.upvotes !== newCount) {
+      setPost((prev) => {
+        return {
+          ...prev,
+          upvotes: newCount,
+        };
+      });
+      const { data, error } = await supabase
+        .from("Post")
+        .update([{ upvotes: newCount }])
+        .eq("id", params.id);
+    }
+  };
+
   return (
     <div className="DetailView">
       {post && (
@@ -41,7 +58,8 @@ const DetailView = () => {
           )}
           <br></br>
           <p>
-            <FiThumbsUp size={22} /> <b>Upvotes:</b> {post.upvotes}
+            <FiThumbsUp size={22} onClick={updateUpvotes} id="thumbsUp" />{" "}
+            <b>Upvotes:</b> {post.upvotes}
           </p>
         </div>
       )}
