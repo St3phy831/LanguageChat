@@ -11,6 +11,7 @@ const Form = (props) => {
           name="title"
           placeholder="Enter Title"
           size="50"
+          value={props.post.title}
           onChange={props.handleChange}
         />
       </div>
@@ -24,6 +25,7 @@ const Form = (props) => {
           placeholder="Enter Description"
           rows="10"
           cols="50"
+          value={props.post.description}
           onChange={props.handleChange}
         ></textarea>
       </div>
@@ -31,7 +33,12 @@ const Form = (props) => {
         <b className="formTitle">Language: </b>
         <select id="formDropdown" name="language" onChange={props.handleChange}>
           {Object.values(languages).map((language) => (
-            <option value={language}>{language}</option>
+            <option
+              selected={language === props.post.language ? "selected" : ""}
+              value={language}
+            >
+              {language}
+            </option>
           ))}
         </select>
       </div>
@@ -43,6 +50,7 @@ const Form = (props) => {
           name="image"
           placeholder="Enter Image URL"
           size="30"
+          value={props.post.image}
           onChange={props.handleChange}
         />
       </div>

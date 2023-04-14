@@ -13,7 +13,6 @@ const DetailView = () => {
   useEffect(() => {
     const fetchPost = async () => {
       const { data } = await supabase.from("Post").select().eq("id", params.id);
-      console.log(data[0]);
       setPost(data[0]);
     };
     fetchPost().catch(console.error);
@@ -65,7 +64,9 @@ const DetailView = () => {
               <b>Upvotes:</b> {post.upvotes}
             </div>
             <div>
-              <BiEdit size={30} />
+              <Link to={"/edit/" + post.id}>
+                <BiEdit size={30} />
+              </Link>
               <MdDelete size={30} />
             </div>
           </div>
