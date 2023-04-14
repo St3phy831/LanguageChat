@@ -15,7 +15,7 @@ img {
   border-radius: 10px;
 }
 
-#thumbsUp {
+.clickIcon {
   cursor: pointer;
 }
 

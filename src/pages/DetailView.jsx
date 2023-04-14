@@ -35,6 +35,15 @@ const DetailView = () => {
     }
   };
 
+  const deletePost = async (event) => {
+    event.preventDefault();
+    const { data, error } = await supabase
+      .from("Post")
+      .delete()
+      .eq("id", params.id);
+    window.location = "/feed";
+  };
+
   return (
     <div className="DetailView">
       {post && (
@@ -60,14 +69,18 @@ const DetailView = () => {
           <br></br>
           <div id="actions">
             <div>
-              <FiThumbsUp size={26} onClick={updateUpvotes} id="thumbsUp" />{" "}
+              <FiThumbsUp
+                size={26}
+                onClick={updateUpvotes}
+                className="clickIcon"
+              />{" "}
               <b>Upvotes:</b> {post.upvotes}
             </div>
             <div>
               <Link to={"/edit/" + post.id}>
                 <BiEdit size={30} />
               </Link>
-              <MdDelete size={30} />
+              <MdDelete size={30} onClick={deletePost} className="clickIcon" />
             </div>
           </div>
         </div>
