@@ -34,7 +34,7 @@ const CreatePost = () => {
           image: post.image,
         },
       ]);
-      window.location = "/";
+      window.location = "/feed";
     }
   };
 
