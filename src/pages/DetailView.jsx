@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { supabase } from "../client";
 import { FiThumbsUp } from "react-icons/fi";
+import { BiEdit } from "react-icons/bi";
+import { MdDelete } from "react-icons/md";
 import "./DetailView.css";
 
 const DetailView = () => {
@@ -57,10 +59,16 @@ const DetailView = () => {
             </p>
           )}
           <br></br>
-          <p>
-            <FiThumbsUp size={22} onClick={updateUpvotes} id="thumbsUp" />{" "}
-            <b>Upvotes:</b> {post.upvotes}
-          </p>
+          <div id="actions">
+            <div>
+              <FiThumbsUp size={26} onClick={updateUpvotes} id="thumbsUp" />{" "}
+              <b>Upvotes:</b> {post.upvotes}
+            </div>
+            <div>
+              <BiEdit size={30} />
+              <MdDelete size={30} />
+            </div>
+          </div>
         </div>
       )}
     </div>
