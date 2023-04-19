@@ -63,6 +63,7 @@ const Feed = () => {
           posts.map((post) => (
             <Link to={"/" + post.id}>
               <div className="Post">
+                <p>{new Date(post.created_at).toLocaleDateString()}</p>
                 <b className="title">{post.title}</b>
                 <br></br>
                 <p>Upvotes: {post.upvotes}</p>
