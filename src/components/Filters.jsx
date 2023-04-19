@@ -19,13 +19,24 @@ const Filters = (props) => {
 
   return (
     <div className="Filters">
-      <span>Order By:</span>
-      <button className="filtersBtn" onClick={orderByNewest}>
-        Newest
-      </button>
-      <button className="filtersBtn" onClick={orderByUpvotes}>
-        Most Popular
-      </button>
+      <div>
+        <span>Order By:</span>
+        <button className="filtersBtn" onClick={orderByNewest}>
+          Newest
+        </button>
+        <button className="filtersBtn" onClick={orderByUpvotes}>
+          Most Popular
+        </button>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter title"
+          onChange={(inputString) =>
+            props.searchByTitle(inputString.target.value)
+          }
+        />
+      </div>
     </div>
   );
 };
