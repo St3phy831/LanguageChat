@@ -4,6 +4,7 @@ import { supabase } from "../client";
 import { FiThumbsUp } from "react-icons/fi";
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
+import CommentSection from "../components/CommentSection";
 import "./DetailView.css";
 
 const DetailView = () => {
@@ -83,6 +84,7 @@ const DetailView = () => {
               <MdDelete size={30} onClick={deletePost} className="clickIcon" />
             </div>
           </div>
+          <CommentSection comments={post.comments} id={post.id} />
         </div>
       )}
     </div>

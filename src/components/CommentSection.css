@@ -1,0 +1,8 @@
+.CommentSection {
+  margin-top: 20px;
+  background-color: rgb(222, 247, 224);
+  padding: 10px;
+}
+#commentInput {
+  width: 99%;
+}
