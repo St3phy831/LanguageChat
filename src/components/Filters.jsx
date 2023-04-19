@@ -32,6 +32,7 @@ const Filters = (props) => {
         <input
           type="text"
           placeholder="Enter title"
+          size="40"
           onChange={(inputString) =>
             props.searchByTitle(inputString.target.value)
           }
