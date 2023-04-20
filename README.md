@@ -39,9 +39,16 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories (gifs separated by screens):
 
-<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Feed Screen:
+<img src='feed.gif' title='Video Walkthrough' width='' alt='Feed Video Walkthrough' />
+
+Create Screen:
+<img src='create.gif' title='Video Walkthrough' width='' alt='Create Video Walkthrough' />
+
+Detail Screen:
+<img src='detail.gif' title='Video Walkthrough' width='' alt='Detail Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [GIPHY CAPTURE](https://giphy.com/apps/giphycapture)
