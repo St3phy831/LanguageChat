@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-const SideBar = () => {
+const NavBar = () => {
   return (
     <div>
-      <div className="SideBar">
+      <div className="NavBar">
         <nav className="Menu">
           <Link to="/">
             <span className="name">LanguageChat</span>
@@ -23,4 +23,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default NavBar;
